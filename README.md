@@ -1,52 +1,99 @@
-AI Text Detector
-An explainable AI text detector that distinguishes between human-written and AI-generated text using a fine-tuned DistilBERT model, with advanced features for text humanization, synonym replacement, and sentiment analysis. Built with PyTorch, Transformers, SHAP, BART, and a Gradio interface, this project achieves ~97-98% validation accuracy on the HC3 dataset.
-Project Overview
-With the rise of large language models (LLMs) like ChatGPT, distinguishing human from AI-generated text is crucial for publishers, educators, and content creators. This project addresses this challenge by providing a unified, transparent, and user-friendly system that not only detects AI-generated text but also explains predictions, refines text to sound more human-like, and supports interactive text enhancement.
-Key Features
+# 🧠 Enhanced AI Text Detector
 
-Text Classification: Fine-tuned DistilBERT to classify text as human or AI-generated with high accuracy.
-Explainability: Uses SHAP (Shapley Additive Explanations) to highlight influential tokens, visualized as interactive Plotly bar charts.
-Text Humanization: Employs Corrective Retrieval-Augmented Generation (CRAG) with SentenceTransformer, FAISS, and BART-large to transform AI text into natural, human-like prose.
-Synonym Generation: Generates context-aware synonyms using BART-base, informed by web context (DuckDuckGo) and WordNet, integrated into a Gradio interface.
-ReAct Loop: Refines low-confidence predictions by replacing key words (identified by SHAP) with synonyms, re-classifying up to three times.
-Sentiment Analysis: Analyzes text tone for enhanced contextual understanding.
-Interactive Interface: Gradio-based UI for text classification, synonym selection, and visualization.
+An **explainable AI text detector** that distinguishes between human-written and AI-generated content with high accuracy. Built using a fine-tuned **DistilBERT** model, this tool incorporates advanced features like **text humanization**, **synonym replacement**, and **sentiment analysis** — all in an interactive **Gradio interface**.
 
-Novelty
-Unlike tools like DetectGPT, which only detect AI text, this system:
+![Accuracy Badge](https://img.shields.io/badge/Accuracy-97%25-brightgreen)
+![License Badge](https://img.shields.io/badge/License-MIT-blue)
+![Python Badge](https://img.shields.io/badge/Made%20With-Python%203.8%2B-yellow)
 
-Provides explainability through SHAP visualizations.
-Enhances text with humanization using CRAG, blending BART paraphrasing, web context, and WordNet synonyms.
-Supports human-in-the-loop correction via interactive synonym replacement.
-Adapts to noisy, real-world data with robust context retrieval (FAISS) and corrective actions.
+---
 
-Implementation
+## 🚀 Project Overview
 
-Dataset: 3000 balanced samples (1500 human, 1500 AI) from the HC3 dataset (Hugging Face).
-Training: Fine-tuned distilbert-base-uncased for 5 epochs (batch size: 8, learning rate: 2e-5) using mixed precision on Kaggle’s GPU.
-Model Storage: Saved to /kaggle/working/ai_text_detector_model.
-Technologies: PyTorch, Transformers, SHAP, SentenceTransformers, FAISS, BART, WordNet, DuckDuckGo API, Gradio.
+With the rise of large language models (LLMs) like ChatGPT, it's becoming increasingly important to **detect AI-generated content**. This project offers a unified and transparent system to:
 
-Getting Started
+- **Detect AI-generated text**
+- **Explain predictions via SHAP**
+- **Humanize AI text**
+- **Suggest context-aware synonyms**
+- **Analyze sentiment**
 
-Clone the Repository:git clone https://github.com/Varunsk777/llm-project.git
-cd llm-project
+It achieves **97–98% validation accuracy** on the **HC3 dataset**.
 
+---
 
-Install Dependencies:pip install torch transformers scikit-learn matplotlib seaborn tqdm datasets numpy gradio faiss-cpu
+## 🔍 Key Features
 
+- **🔠 Text Classification**  
+  Fine-tuned DistilBERT model trained to detect AI vs. human-written text.
 
-Run the Notebook:Open llm-final_code.ipynb in Jupyter Notebook and execute the cells to train the model, test predictions, or launch the Gradio interface.
+- **💡 Explainability**  
+  SHAP-based visualizations highlighting important words using Plotly.
 
-Future Work
+- **✍️ Text Humanization (CRAG)**  
+  Corrective Retrieval-Augmented Generation using SentenceTransformer + FAISS + BART-large.
 
-Expand the dataset to include more diverse text sources.
-Integrate additional LLMs for enhanced paraphrasing.
-Optimize FAISS retrieval for larger context databases.
+- **🧠 Synonym Replacement**  
+  BART-based context-aware synonyms with web context (DuckDuckGo) + WordNet.
 
-Acknowledgments
+- **♻️ ReAct Loop**  
+  Replaces SHAP-highlighted words with synonyms and reclassifies up to 3 times to improve prediction confidence.
 
-HC3 Dataset by Hello-SimpleAI.
-Hugging Face Transformers, SHAP, and Gradio communities.
+- **🎭 Sentiment Analysis**  
+  Understands the emotional tone of the text to support downstream decisions.
 
-Explore the code to dive into advanced NLP for AI text detection and humanization!
+- **🖥️ Gradio Interface**  
+  Full-featured UI for classification, synonym selection, and humanization visualization.
+
+---
+
+## 🧪 Novelty
+
+Unlike tools such as **DetectGPT**, this system offers:
+
+- ✅ **Transparency** with token-level SHAP explanations  
+- 🔄 **Interactive refinement** through the ReAct loop  
+- 🧬 **Text enhancement** using CRAG and context-aware generation  
+- 🌐 **Web + WordNet-informed synonyms**  
+
+---
+
+## 🛠️ Technologies Used
+
+- `PyTorch`
+- `Transformers` (Hugging Face)
+- `Gradio`
+- `SHAP`
+- `SentenceTransformers`
+- `FAISS`
+- `BART`
+- `WordNet`
+- `DuckDuckGo API`
+
+---
+
+## 📂 Dataset & Training
+
+- **Dataset**: [HC3 Dataset (Hugging Face)](https://huggingface.co/datasets/Hello-SimpleAI/HC3)  
+  → 3000 samples (1500 Human, 1500 AI)
+
+- **Training Configuration**:  
+  - Model: `distilbert-base-uncased`  
+  - Epochs: `5`  
+  - Batch Size: `8`  
+  - Learning Rate: `2e-5`  
+  - Precision: Mixed  
+  - Hardware: Trained on Kaggle GPU  
+
+- **Model Checkpoint**:  
+  Saved to `/kaggle/working/ai_text_detector_model`
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Varunsk777/Enhanced-AI-text-Detector.git
+cd Enhanced-AI-text-Detector
