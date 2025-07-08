@@ -1,0 +1,27 @@
+Python
+
+pycache/ *.pyc *.pyo *.pyd .Python build/ dist/ *.egg-info/ *.egg
+
+Jupyter Notebook
+
+.ipynb_checkpoints/
+
+Virtual Environments
+
+venv/ env/ .venv/
+
+IDEs and Editors
+
+.vscode/ .idea/ *.swp *.swo
+
+OS Files
+
+.DS_Store Thumbs.db
+
+Kaggle/GPU Environment
+
+/kaggle/ *.h5 *.pth *.pt
+
+Miscellaneous
+
+*.log *.cache *.tmp *.bak
