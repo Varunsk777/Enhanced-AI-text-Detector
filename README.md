@@ -97,3 +97,24 @@ Unlike tools such as **DetectGPT**, this system offers:
 ```bash
 git clone https://github.com/Varunsk777/Enhanced-AI-text-Detector.git
 cd Enhanced-AI-text-Detector
+```
+### 2. Install Dependencies
+```bash
+pip install torch transformers scikit-learn matplotlib seaborn tqdm datasets numpy gradio faiss-cpu
+```
+### 3. 3. Run the Notebook
+Open the project in Jupyter:
+```bash
+jupyter notebook llm-final_code.ipynb
+```
+
+## 🤝 Acknowledgments
+- HC3 Dataset by Hello-SimpleAI
+
+- Open-source contributors from Hugging Face, Gradio, SHAP, and FAISS
+
+- Inspiration from the growing AI explainability and interpretability community
+
+## 📄 License
+- This project is licensed under the MIT License.
+- See the LICENSE file for full details.
